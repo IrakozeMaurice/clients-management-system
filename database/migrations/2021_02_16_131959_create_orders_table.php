@@ -18,11 +18,17 @@ class CreateOrdersTable extends Migration
             $table->unsignedInteger('client_id');
             $table->unsignedInteger('service_id');
             $table->string('service');
-            $table->string('description');
+
+            $table->string('package');
+            $table->string('extension');
+            $table->string('domain_name');
             $table->string('name_server');
             $table->unsignedInteger('price');
             $table->date('registration_date');
             $table->timestamps();
+
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
         });
     }
 

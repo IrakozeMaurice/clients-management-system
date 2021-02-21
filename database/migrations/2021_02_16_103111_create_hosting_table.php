@@ -16,8 +16,8 @@ class CreateHostingTable extends Migration
         Schema::create('hosting', function (Blueprint $table) {
             $table->increments('id');
             $table->string('package_name');
-            $table->unsignedInteger('disc_space');
-            $table->unsignedInteger('bandwidth');
+            $table->string('disc_space');
+            $table->string('bandwidth');
             $table->unsignedInteger('email_accounts');
             $table->unsignedInteger('parked_domains');
             $table->unsignedInteger('subdomain');
