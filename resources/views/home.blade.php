@@ -1,9 +1,9 @@
 @extends('layouts.app')
-
+@section('pageTitle', 'Dashboard')
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            @include('layouts.sidenav')
+            @include('partials.sidenav')
             <div class="col-lg-9">
                 <div class="card">
                     <div class="card-header">Dashboard</div>
