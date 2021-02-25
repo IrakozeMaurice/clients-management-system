@@ -21,6 +21,7 @@
                         <th>name server</th>
                         <th>price</th>
                         <th>registration date</th>
+                        <th>expiration date</th>
                         <th colspan="2">Action</th>
                     </tr>
                     @foreach ($orders as $order)
@@ -36,6 +37,7 @@
                             <td><a href="/orders/{{ $order->id }}">{{ $order->name_server }}</td>
                             <td><a href="/orders/{{ $order->id }}">{{ $order->price }}</td>
                             <td><a href="/orders/{{ $order->id }}">{{ $order->registration_date }}</td>
+                            <td><a href="/orders/{{ $order->id }}">{{ $order->expiration_date }}</td>
                             <td><a href="/orders/{{ $order->id }}/edit"><button
                                         class="btn btn-success">Edit</button></a>
                             </td>

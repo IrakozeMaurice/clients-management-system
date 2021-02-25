@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Order;
 use App\Client;
 use App\Service;
+use Carbon\Carbon;
 
 class OrdersController extends Controller
 {
@@ -42,7 +43,8 @@ class OrdersController extends Controller
                 'domain_name' => null,
                 'name_server' => $attributes['name_server_hosting'],
                 'price' => $attributes['price'],
-                'registration_date' => date('y-m-d')
+                'registration_date' => date('y-m-d'),
+                'expiration_date' => Carbon::now()->addYear(1)
             ]);
         }
         if ($attributes['service'] == 'Domain') {
@@ -56,7 +58,8 @@ class OrdersController extends Controller
                 'domain_name' => $attributes['domain_name'],
                 'name_server' => $attributes['name_server_domain'],
                 'price' => $attributes['price'],
-                'registration_date' => date('y-m-d')
+                'registration_date' => date('y-m-d'),
+                'expiration_date' => Carbon::now()->addYear(1)
             ]);
         }
         if ($attributes['service'] == 'Web') {
@@ -103,7 +106,8 @@ class OrdersController extends Controller
                 'domain_name' => null,
                 'name_server' => $attributes['name_server_hosting'],
                 'price' => $attributes['price'],
-                'registration_date' => date('y-m-d')
+                'registration_date' => date('y-m-d'),
+                'expiration_date' => Carbon::now()->addYear(1)
             ]);
         }
         if ($attributes['service'] == 'Domain') {
@@ -117,7 +121,8 @@ class OrdersController extends Controller
                 'domain_name' => $attributes['domain_name'],
                 'name_server' => $attributes['name_server_domain'],
                 'price' => $attributes['price'],
-                'registration_date' => date('y-m-d')
+                'registration_date' => date('y-m-d'),
+                'expiration_date' => Carbon::now()->addYear(1)
             ]);
         }
         if ($attributes['service'] == 'Web') {
