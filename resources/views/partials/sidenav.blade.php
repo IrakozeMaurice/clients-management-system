@@ -1,13 +1,4 @@
 <div class="col-lg-3">
-    {{-- <ul class="list-group">
-        <li class="list-group-item text-center"><a href="/orders"><strong>Orders</strong></a></li> --}}
-    {{-- @if (auth()->user()->is_admin == 1) --}}
-    {{-- <li class="list-group-item text-center"><a href="#"><strong>Services</strong></a></li>
-        <li class="list-group-item text-center"><a href="/clients"><strong>Clients</strong></a></li> --}}
-    {{-- @endif --}}
-    {{-- </ul> --}}
-
-    {{--  --}}
     <!-- Sidebar -->
     <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
         <!-- Divider -->
@@ -28,7 +19,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-user"></i>
+                <i class="fas fa-fw fa-users"></i>
                 <span>Clients</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -50,6 +41,37 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="/orders/create">New</a>
                     <a class="collapse-item" href="/orders">View all</a>
+                </div>
+            </div>
+        </li>
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-cogs"></i>
+                <span>Services</span>
+            </a>
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="#">New</a>
+                    <a class="collapse-item" href="#">View all</a>
+                </div>
+            </div>
+        </li>
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Users</span>
+            </a>
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="#">New</a>
+                    <a class="collapse-item" href="#">View all</a>
                 </div>
             </div>
         </li>
