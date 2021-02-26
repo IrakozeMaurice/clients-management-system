@@ -67,8 +67,8 @@
             </a>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="#">New</a>
-                    <a class="collapse-item" href="#">View all</a>
+                    <a class="collapse-item" href="/users/create">New</a>
+                    <a class="collapse-item" href="/users">View all</a>
                 </div>
             </div>
         </li>

@@ -7,7 +7,7 @@
         <h1 class="h4">Clients</h1>
         <hr>
         <div>
-            <table id="clientsTable" class="table table-hover table-sm small">
+            <table id="clientsTable" class="table table-bordered table-hover table-sm small">
                 <thead>
                     <tr>
                         <th class="text-center">Firstname</th>

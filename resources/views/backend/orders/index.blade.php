@@ -7,7 +7,7 @@
         <h1 class="h4">Orders</h1>
         <hr>
         <div>
-            <table class="table table-hover table-sm small">
+            <table class="table table-bordered table-hover table-sm small">
                 <tr>
                     <th>order ID</th>
                     <th>client names</th>
