@@ -18,7 +18,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-white-600 small">{{ auth()->user()->firstname }}
                                     {{ auth()->user()->lastname }}</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="{{ asset('img/undraw_profile.svg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -39,7 +39,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal"
                                     data-target="#logoutModal"
                                     onclick="event.preventDefault();
-                                                                                                                                                                                document.getElementById('logout-form').submit();">
+                                                                                                                                                                                        document.getElementById('logout-form').submit();">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

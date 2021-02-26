@@ -73,7 +73,8 @@ class OrdersController extends Controller
                 'domain_name' => null,
                 'name_server' => null,
                 'price' => $attributes['price'],
-                'registration_date' => date('y-m-d')
+                'registration_date' => date('y-m-d'),
+                'expiration_date' => null
             ]);
         }
 

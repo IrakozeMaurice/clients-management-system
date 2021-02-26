@@ -1,4 +1,4 @@
-@extends('home')
+@extends('layouts.app')
 @section('pageTitle', 'New order')
 @section('content')
     <div class="col-lg-9">
@@ -82,6 +82,9 @@
     </div>
     <script type="application/javascript">
         function displayForm() {
+            document.getElementById("Hosting").style.display = 'none';
+            document.getElementById("Domain").style.display = 'none';
+            document.getElementById("Web").style.display = 'none';
             var service = document.getElementById("service").value;
             document.getElementById(service).style.display = 'block';
         }

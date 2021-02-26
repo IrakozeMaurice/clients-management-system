@@ -1,4 +1,4 @@
-@extends('home')
+@extends('layouts.app')
 @section('pageTitle', 'update client')
 @section('content')
     <div class="col-lg-12">
