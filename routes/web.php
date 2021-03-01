@@ -24,3 +24,9 @@ Route::resource('clients', 'ClientsController');
 Route::resource('orders', 'OrdersController');
 
 Route::resource('users', 'UsersController');
+
+Route::resource('hostings', 'HostingsController');
+
+Route::resource('domains', 'DomainsController');
+
+Route::resource('web', 'WebController');

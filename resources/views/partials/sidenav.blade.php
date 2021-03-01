@@ -53,8 +53,9 @@
             </a>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="#">New</a>
-                    <a class="collapse-item" href="#">View all</a>
+                    <a class="collapse-item" href="/hostings">Hosting</a>
+                    <a class="collapse-item" href="/domains">Domain</a>
+                    <a class="collapse-item" href="/web">Web</a>
                 </div>
             </div>
         </li>
