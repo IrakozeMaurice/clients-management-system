@@ -21,8 +21,7 @@ class OrdersController extends Controller
     public function create()
     {
         $clients = Client::all();
-        $services = Service::all();
-        return view('backend.orders.create', compact('clients', 'services'));
+        return view('backend.orders.create', compact('clients'));
     }
 
     public function store(Request $request)

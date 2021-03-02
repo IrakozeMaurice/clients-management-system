@@ -11,7 +11,7 @@
                             clients
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            40
+                            {{ getAllClients()->count() }}
                         </div>
                     </div>
                     <div class="col-auto">
@@ -31,7 +31,7 @@
                             orders
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            40
+                            {{ getAllOrders()->count() }}
                         </div>
                     </div>
                     <div class="col-auto">
@@ -51,7 +51,7 @@
                             services
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            3
+                            {{ getAllServices()->count() }}
                         </div>
                     </div>
                     <div class="col-auto">
@@ -71,7 +71,7 @@
                             hosting packages
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            5
+                            {{ getHostingPackages()->count() }}
                         </div>
                     </div>
                     <div class="col-auto">
@@ -90,7 +90,7 @@
                             domain extensions
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            13
+                            {{ getDomainExtensions()->count() }}
                         </div>
                     </div>
                     <div class="col-auto">
@@ -109,7 +109,7 @@
                             web packages
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            3
+                            {{ getWebPackages()->count() }}
                         </div>
                     </div>
                     <div class="col-auto">
