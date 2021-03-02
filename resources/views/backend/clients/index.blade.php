@@ -7,7 +7,7 @@
         <h1 class="h4">Clients</h1>
         <hr>
         <div>
-            <table id="clientsTable" class="table table-bordered table-hover table-sm small">
+            <table id="tableSearch" class="table table-responsive table-bordered table-hover table-sm small w-100">
                 <thead>
                     <tr>
                         <th class="text-center">Firstname</th>
@@ -15,7 +15,7 @@
                         <th class="text-center">Email</th>
                         <th class="text-center">Phone</th>
                         <th class="text-center">Address</th>
-                        <th class="text-center" class="text-center">Action</th>
+                        <th style="display: none">&nbsp;</th>
                         <th style="display: none">&nbsp;</th>
                     </tr>
                 </thead>
@@ -48,23 +48,12 @@
                         <th class="text-center">Email</th>
                         <th class="text-center">Phone</th>
                         <th class="text-center">Address</th>
-                        <th class="text-center" class="text-center">Action</th>
+                        <th style="display: none">&nbsp;</th>
                         <th style="display: none">&nbsp;</th>
                     </tr>
                 </tfoot>
             </table>
         </div>
     </div>
-    {{-- <script src="{{ asset('js/popper.min.js') }}"></script> --}}
-    <script type="application/javascript" src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
-    <script type="application/javascript" src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-    <script type="application/javascript" src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
-    <script type="application/javascript">
-        $(document).ready(function() {
-            $.noConflict();
-            $('#clientsTable').DataTable();
-            // $('.dataTables_length').addClass('bs-select');
-        });
-
-    </script>
+    @include('partials.dataTableScripts')
 @endsection
