@@ -45,34 +45,36 @@
         </li>
 
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
-                aria-expanded="true" aria-controls="collapseThree">
-                <i class="fas fa-fw fa-cogs"></i>
-                <span>Services</span>
-            </a>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="/hostings">Hosting</a>
-                    <a class="collapse-item" href="/domains">Domain</a>
-                    <a class="collapse-item" href="/web">Web</a>
+        @if (auth()->user()->is_admin == 1)
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="true" aria-controls="collapseThree">
+                    <i class="fas fa-fw fa-cogs"></i>
+                    <span>Services</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/hostings">Hosting</a>
+                        <a class="collapse-item" href="/domains">Domain</a>
+                        <a class="collapse-item" href="/web">Web</a>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
-                aria-expanded="true" aria-controls="collapseFour">
-                <i class="fas fa-fw fa-user"></i>
-                <span>Users</span>
-            </a>
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="/users/create">New</a>
-                    <a class="collapse-item" href="/users">View all</a>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
+                    aria-expanded="true" aria-controls="collapseFour">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Users</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/users/create">New</a>
+                        <a class="collapse-item" href="/users">View all</a>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
+        @endif
         <!-- Divider -->
         <hr class="sidebar-divider">
         <!-- Heading -->
