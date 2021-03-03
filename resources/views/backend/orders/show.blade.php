@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'order info')
 @section('content')
-    <div class="col-lg-9">
+    <div class="col-lg-6">
         <h1 class="h4">order information</h1>
         <hr>
         <small>names: {{ $order->client->firstname }} {{ $order->client->lastname }}</small><br>

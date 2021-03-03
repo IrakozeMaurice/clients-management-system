@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'New user')
 @section('content')
-    <div class="col-lg-9">
+    <div class="col-lg-6">
         <h1 class="h4">new user</h1>
         <form action="/users" method="POST">
             @csrf

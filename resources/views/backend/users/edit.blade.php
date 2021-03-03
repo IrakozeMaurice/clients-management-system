@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'update user')
 @section('content')
-    <div class="col-lg-12">
+    <div class="col-lg-6">
         <h1 class="h4">Edit user</h1>
         <form action="/users/{{ $user->id }}" method="POST">
             @csrf

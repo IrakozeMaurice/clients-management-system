@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'update client')
 @section('content')
-    <div class="col-lg-12">
+    <div class="col-lg-6">
         <h1 class="h4">Edit client</h1>
         <form action="/clients/{{ $client->id }}" method="POST" enctype="multipart/form-data">
             @csrf

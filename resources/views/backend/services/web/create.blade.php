@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'New web Package')
 @section('content')
-    <div class="col-lg-9">
+    <div class="col-lg-6">
         <h1 class="h4">new web package</h1>
         <form action="/web" method="POST" enctype="multipart/form-data">
             @csrf

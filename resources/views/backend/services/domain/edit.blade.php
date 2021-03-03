@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'update package')
 @section('content')
-    <div class="col-lg-12">
+    <div class="col-lg-6">
         <h1 class="h4">Edit package</h1>
         <form action="/domains/{{ $extension->id }}" method="POST" enctype="multipart/form-data">
             @csrf

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'package info')
 @section('content')
-    <div class="col-lg-9">
+    <div class="col-lg-6">
         <h1 class="h4">package information</h1>
         <hr>
         <small>extension name: {{ $extension->extension }}</small><br>

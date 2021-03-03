@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'user info')
 @section('content')
-    <div class="col-lg-9">
+    <div class="col-lg-6">
         <h1 class="h4">user information</h1>
         <hr>
         <h4>{{ $user->firstname }} {{ $user->lastname }}</h4>
