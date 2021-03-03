@@ -16,7 +16,7 @@
                         <th>package</th>
                         <th>extension</th>
                         <th>domain name</th>
-                        <th>name server</th>
+                        <th>name servers</th>
                         <th>price</th>
                         {{-- <th>registration date</th> --}}
                         <th>expiration date</th>
@@ -28,16 +28,23 @@
                     @foreach ($orders as $order)
                         <tr>
                             <td><a href="/orders/{{ $order->id }}">{{ $order->id }}</td>
-                            <td><a href="/orders/{{ $order->id }}">{{ $order->client->firstname }}
-                                    {{ $order->client->lastname }}</td>
-                            <td><a href="/orders/{{ $order->id }}">{{ $order->service }}</td>
-                            <td><a href="/orders/{{ $order->id }}">{{ $order->package }}</td>
-                            <td><a href="/orders/{{ $order->id }}">{{ $order->extension }}</td>
-                            <td><a href="/orders/{{ $order->id }}">{{ $order->domain_name }}</td>
-                            <td><a href="/orders/{{ $order->id }}">{{ $order->name_server }}</td>
-                            <td><a href="/orders/{{ $order->id }}">{{ $order->price }}</td>
+                            <td>{{ $order->client->firstname }}
+                                {{ $order->client->lastname }}</td>
+                            <td>{{ $order->service }}</td>
+                            <td>{{ $order->package }}</td>
+                            <td>{{ $order->extension }}</td>
+                            <td>{{ $order->domain_name }}</td>
+                            <td>
+                                <ol>
+                                    <li>{{ $order->ns_one }}</li>
+                                    <li>{{ $order->ns_two }}</li>
+                                    <li>{{ $order->ns_three }}</li>
+                                    <li>{{ $order->ns_four }}</li>
+                                </ol>
+                            </td>
+                            <td>{{ $order->price }}</td>
                             {{-- <td><a href="/orders/{{ $order->id }}">{{ $order->registration_date }}</td> --}}
-                            <td><a href="/orders/{{ $order->id }}">{{ $order->expiration_date }}</td>
+                            <td>{{ $order->expiration_date }}</td>
                             <td>
                                 <a href="/orders/{{ $order->id }}/edit"
                                     class="btn btn-light btn-outline-success text-dark btn-sm">Edit</a>

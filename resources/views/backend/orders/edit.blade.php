@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'update order')
 @section('content')
-    <div class="col-lg-12">
+    <div class="col-lg-6">
         <h1 class="h4">Edit Order</h1>
         <form action="/orders/{{ $order->id }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -28,7 +28,27 @@
                     </select>
                 </div><br>
                 <div>
-                    <input type="text" name="name_server_hosting" value="{{ $order->name_server }}" class="form-control">
+                    <label for="ns_one_hosting">name server one</label>
+                    <input type="text" id="ns_one_hosting" name="ns_one_hosting" value="{{ $order->ns_one }}"
+                        class="form-control">
+                </div>
+                <br>
+                <div>
+                    <label for="ns_two_hosting">name server two</label>
+                    <input type="text" id="ns_two_hosting" name="ns_two_hosting" value="{{ $order->ns_two }}"
+                        class="form-control">
+                </div>
+                <br>
+                <div>
+                    <label for="ns_three_hosting">name server three</label>
+                    <input type="text" id="ns_three_hosting" name="ns_three_hosting" value="{{ $order->ns_three }}"
+                        class="form-control">
+                </div>
+                <br>
+                <div>
+                    <label for="ns_four_hosting">name server four</label>
+                    <input type="text" id="ns_four_hosting" name="ns_four_hosting" value="{{ $order->ns_four }}"
+                        class="form-control">
                 </div>
                 <br>
             </div>
@@ -46,7 +66,27 @@
                 </div>
                 <br>
                 <div>
-                    <input type="text" name="name_server_domain" value="{{ $order->name_server }}" class="form-control">
+                    <label for="ns_one_domain">name server one</label>
+                    <input type="text" id="ns_one_domain" name="ns_one_domain" value="{{ $order->ns_one }}"
+                        class="form-control">
+                </div>
+                <br>
+                <div>
+                    <label for="ns_two_domain">name server two</label>
+                    <input type="text" id="ns_two_domain" name="ns_two_domain" value="{{ $order->ns_two }}"
+                        class="form-control">
+                </div>
+                <br>
+                <div>
+                    <label for="ns_three_domain">name server three</label>
+                    <input type="text" id="ns_three_domain" name="ns_three_domain" value="{{ $order->ns_three }}"
+                        class="form-control">
+                </div>
+                <br>
+                <div>
+                    <label for="ns_four_domain">name server four</label>
+                    <input type="text" id="ns_four_domain" name="ns_four_domain" value="{{ $order->ns_four }}"
+                        class="form-control">
                 </div>
                 <br>
             </div>
@@ -54,8 +94,9 @@
                 <div>
                     <label for="package_name">package</label>
                     <select name="package_web" id="package_name" class="form-control">
-                        <option value="personal">Personal</option>
-                        <option value="business">Business</option>
+                        @foreach ($packages = getWebPackages() as $package)
+                            <option value="{{ $package->package_name }}">{{ $package->package_name }}</option>
+                        @endforeach
                     </select>
                 </div><br>
             </div>

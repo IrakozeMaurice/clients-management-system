@@ -31,6 +31,7 @@ class OrdersController extends Controller
     public function store(Request $request)
     {
         $attributes = $request->all();
+        // dd($attributes);
         $attributes['service_id'] = Service::where('name', request('service'))->value('id');
 
         //calculate price
@@ -44,7 +45,10 @@ class OrdersController extends Controller
                 'package' => $attributes['package_hosting'],
                 'extension' => null,
                 'domain_name' => null,
-                'name_server' => $attributes['name_server_hosting'],
+                'ns_one' => $attributes['ns_one_hosting'],
+                'ns_two' => $attributes['ns_two_hosting'],
+                'ns_three' => $attributes['ns_three_hosting'],
+                'ns_four' => $attributes['ns_four_hosting'],
                 'price' => $attributes['price'],
                 'registration_date' => date('y-m-d'),
                 'expiration_date' => Carbon::now()->addYear(1)
@@ -59,7 +63,10 @@ class OrdersController extends Controller
                 'package' => null,
                 'extension' => $attributes['extension'],
                 'domain_name' => $attributes['domain_name'],
-                'name_server' => $attributes['name_server_domain'],
+                'ns_one' => $attributes['ns_one_domain'],
+                'ns_two' => $attributes['ns_two_domain'],
+                'ns_three' => $attributes['ns_three_domain'],
+                'ns_four' => $attributes['ns_four_domain'],
                 'price' => $attributes['price'],
                 'registration_date' => date('y-m-d'),
                 'expiration_date' => Carbon::now()->addYear(1)
@@ -74,7 +81,10 @@ class OrdersController extends Controller
                 'package' => $attributes['package_web'],
                 'extension' => null,
                 'domain_name' => null,
-                'name_server' => null,
+                'ns_one' => null,
+                'ns_two' => null,
+                'ns_three' => null,
+                'ns_four' => null,
                 'price' => $attributes['price'],
                 'registration_date' => date('y-m-d'),
                 'expiration_date' => null
@@ -97,6 +107,7 @@ class OrdersController extends Controller
     public function update(Order $order, Request $request)
     {
         $attributes = $request->all();
+        // dd($attributes);
         $attributes['service_id'] = Service::where('name', request('service'))->value('id');
         if ($attributes['service'] == 'Hosting') {
             $attributes['price'] = DB::table('hosting')->where('package_name', $attributes['package_hosting'])->value('price');
@@ -108,7 +119,10 @@ class OrdersController extends Controller
                 'package' => $attributes['package_hosting'],
                 'extension' => null,
                 'domain_name' => null,
-                'name_server' => $attributes['name_server_hosting'],
+                'ns_one' => $attributes['ns_one_hosting'],
+                'ns_two' => $attributes['ns_two_hosting'],
+                'ns_three' => $attributes['ns_three_hosting'],
+                'ns_four' => $attributes['ns_four_hosting'],
                 'price' => $attributes['price'],
                 'registration_date' => date('y-m-d'),
                 'expiration_date' => Carbon::now()->addYear(1)
@@ -123,7 +137,10 @@ class OrdersController extends Controller
                 'package' => null,
                 'extension' => $attributes['extension'],
                 'domain_name' => $attributes['domain_name'],
-                'name_server' => $attributes['name_server_domain'],
+                'ns_one' => $attributes['ns_one_domain'],
+                'ns_two' => $attributes['ns_two_domain'],
+                'ns_three' => $attributes['ns_three_domain'],
+                'ns_four' => $attributes['ns_four_domain'],
                 'price' => $attributes['price'],
                 'registration_date' => date('y-m-d'),
                 'expiration_date' => Carbon::now()->addYear(1)
@@ -138,7 +155,10 @@ class OrdersController extends Controller
                 'package' => $attributes['package_web'],
                 'extension' => null,
                 'domain_name' => null,
-                'name_server' => null,
+                'ns_one' => null,
+                'ns_two' => null,
+                'ns_three' => null,
+                'ns_four' => null,
                 'price' => $attributes['price'],
                 'registration_date' => date('y-m-d')
             ]);

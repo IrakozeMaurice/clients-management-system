@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'New order')
 @section('content')
-    <div class="col-lg-9">
+    <div class="col-lg-6">
         <form action="/orders" method="POST" enctype="multipart/form-data">
             @csrf
             <div>
@@ -32,7 +32,19 @@
                     </select>
                 </div><br>
                 <div>
-                    <input type="text" name="name_server_hosting" placeholder="name server" class="form-control">
+                    <input type="text" name="ns_one_hosting" placeholder="name server one" class="form-control">
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="ns_two_hosting" placeholder="name server two" class="form-control">
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="ns_three_hosting" placeholder="name server three" class="form-control">
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="ns_four_hosting" placeholder="name server four" class="form-control">
                 </div>
                 <br>
             </div>
@@ -50,7 +62,19 @@
                 </div>
                 <br>
                 <div>
-                    <input type="text" name="name_server_domain" placeholder="name server" class="form-control">
+                    <input type="text" name="ns_one_domain" placeholder="name server one" class="form-control">
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="ns_two_domain" placeholder="name server two" class="form-control">
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="ns_three_domain" placeholder="name server three" class="form-control">
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="ns_four_domain" placeholder="name server four" class="form-control">
                 </div>
                 <br>
             </div>
