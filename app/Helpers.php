@@ -1,6 +1,8 @@
 <?php
 
+use App\Order;
 use App\Service;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 function getAllClients()
@@ -37,4 +39,18 @@ function getWebPackages()
 {
     $packages = DB::table('web')->get();
     return $packages;
+}
+
+function getExpiringHosting()
+{
+    $expiringHostings = Order::where('service', 'Hosting')->orderBy('expiration_date', 'ASC')->get();
+    // $expiringHostings->expiration_date = Carbon::parse($expiringHostings->expiration_date);
+    return $expiringHostings;
+}
+
+function getExpiringDomains()
+{
+    $expiringDomains = Order::where('service', 'Domain')->orderBy('expiration_date', 'ASC')->get();
+    // $expiringDomains->expiration_date = Carbon::parse($expiringDomains->expiration_date);
+    return $expiringDomains;
 }

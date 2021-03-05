@@ -9,7 +9,14 @@
         <small>package: {{ $order->package }}</small><br>
         <small>domain name: {{ $order->domain_name }}</small><br>
         <small>extension: {{ $order->extension }}</small><br>
-        <small>name server: {{ $order->name_server }}</small><br>
+        <small>name servers:
+            <ol>
+                <li>{{ $order->ns_one }}</li>
+                <li>{{ $order->ns_two }}</li>
+                <li>{{ $order->ns_three }}</li>
+                <li>{{ $order->ns_four }}</li>
+            </ol>
+        </small><br>
         <small>price: {{ $order->price }}</small><br>
         <small>registration date: {{ $order->registration_date }}</small><br>
         <small>expiration date: {{ $order->expiration_date }}</small><br>

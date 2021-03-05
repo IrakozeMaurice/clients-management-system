@@ -119,5 +119,37 @@
             </div>
         </div>
     </div>
+    <br>
     {{-- end of cards section --}}
+    <div class="col-lg-12">
+        <hr>
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="list-group">
+                    <li class="list-group-item bg-dark active">Expiring Domains Orders</li>
+                    @foreach ($expiringDomains = getExpiringDomains() as $expiringDomain)
+                        <li class="list-group-item text-left">
+                            {{ $expiringDomain->expiration_date }} |
+                            <small>{{ $expiringDomain->domain_name }}{{ $expiringDomain->extension }}</small>
+                            <span class="badge badge-info badge-pill float-right">{{ $expiringDomain->price }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <ul class="list-group">
+                    <li class="list-group-item bg-dark active">Expiring Hosting Orders</li>
+                    @foreach ($expiringHostings = getExpiringHosting() as $expiringHosting)
+                        <li class="list-group-item text-left">
+                            {{ $expiringHosting->expiration_date }} |
+                            <small><a
+                                    href="/orders/{{ $expiringHosting->id }}">{{ $expiringHosting->client->firstname }}{{ $expiringHosting->client->lastname }}</a></small>
+                            <span class="badge badge-info badge-pill float-right">{{ $expiringHosting->price }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
 @endsection

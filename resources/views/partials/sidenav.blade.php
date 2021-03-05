@@ -81,37 +81,31 @@
         <div class="sidebar-heading">
             Addons
         </div>
-        <!-- Nav Item - Pages Collapse Menu -->
+        <!-- Nav Item - reports Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                 aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
+                <span>Report</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="#">Login</a>
-                    <a class="collapse-item" href="#">Register</a>
-                    <a class="collapse-item" href="#">Forgot Password</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Other Pages:</h6>
-                    <a class="collapse-item" href="#">404 Page</a>
-                    <a class="collapse-item" href="#">Blank Page</a>
+                    <a class="collapse-item" href="#">Clients</a>
+                    <a class="collapse-item" href="#">Orders</a>
                 </div>
             </div>
         </li>
-        <!-- Nav Item - Charts -->
+        <!-- Nav Item - profile -->
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
+                <i class="fas fa-fw fa-user"></i>
+                <span>Profile</span></a>
         </li>
-        <!-- Nav Item - Tables -->
+        <!-- Nav Item - settings -->
         <li class="nav-item">
             <a class="nav-link" href="#">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <span>Settings</span></a>
         </li>
     </ul>
 </div>
