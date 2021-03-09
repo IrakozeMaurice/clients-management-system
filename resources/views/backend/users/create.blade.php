@@ -26,10 +26,6 @@
             </div>
             <br>
             <div>
-                <input type="password" name="password" placeholder="password" class="form-control">
-            </div>
-            <br>
-            <div>
                 <button type="submit" class="btn btn-dark">Add user</button>
             </div>
         </form><br>

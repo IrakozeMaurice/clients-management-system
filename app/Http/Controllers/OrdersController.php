@@ -31,7 +31,6 @@ class OrdersController extends Controller
     public function store(Request $request)
     {
         $attributes = $request->all();
-        // dd($attributes);
         $attributes['service_id'] = Service::where('name', request('service'))->value('id');
 
         //calculate price

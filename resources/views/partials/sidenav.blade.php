@@ -44,8 +44,7 @@
             </div>
         </li>
 
-
-        @if (auth()->user()->is_admin == 1)
+        @if (auth()->user()->is_admin)
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="true" aria-controls="collapseThree">
@@ -97,7 +96,7 @@
         </li>
         <!-- Nav Item - profile -->
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/profile/{{ auth()->id() }}">
                 <i class="fas fa-fw fa-user"></i>
                 <span>Profile</span></a>
         </li>

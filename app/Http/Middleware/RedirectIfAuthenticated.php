@@ -19,7 +19,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME)->with('message', 'You are already logged in');
+            return redirect()->back()->with('message', 'You are already logged in');
         }
 
         return $next($request);

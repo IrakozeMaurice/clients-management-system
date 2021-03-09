@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Profile;
 
 class UsersController extends Controller
 {
@@ -22,10 +23,16 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $attributes = $this->validateUser();
-        $attributes['password'] = Hash::make($attributes['password']);
+        $attributes['password'] = Hash::make('');
         $attributes['is_admin'] = request('is_admin');
-        User::create($attributes);
-        return redirect('/users');
+        $user = User::create($attributes);
+        Profile::create([
+            'user_id' => $user->id,
+            'email' => $user->email,
+            'phone' => '',
+            'address' => ''
+        ]);
+        return redirect('/users')->with('message', 'user created');
     }
 
     public function show(User $user)
@@ -35,22 +42,56 @@ class UsersController extends Controller
 
     public function edit(User $user)
     {
+        abort_unless($user->id == auth()->id(), 403, 'You are not authorized to view this page');
         return view('backend.users.edit', compact('user'));
     }
 
-    public function update(User $user)
+    public function update(User $user, Request $request)
     {
+
         $attributes = $this->validateUser();
-        $attributes['password'] = Hash::make($attributes['password']);
-        $attributes['is_admin'] = request('is_admin');
-        $user->update($attributes);
-        return redirect('/users');
+        $user->firstname = $attributes['firstname'];
+        $user->lastname = $attributes['lastname'];
+        $user->email = $attributes['email'];
+        $user->is_admin = request('is_admin');
+        $user->save();
+        return redirect('/profile')->with('message', 'profile updated');
     }
 
     public function destroy(User $user)
     {
         $user->delete();
         return redirect('/users');
+    }
+
+    public function showRegisterForm()
+    {
+        return view('backend.users.approve');
+    }
+
+    public function register()
+    {
+
+        $user = User::where('email', request('email'))->get()->first();
+
+        if ($user) {
+            #update user password
+            $attributes = request()->validate([
+                'password' => ['required', 'min:8']
+            ]);
+            $user->password = Hash::make($attributes['password']);
+            $user->save();
+            return view('backend.users.waitingApproval');
+        }
+        return redirect()->back()->with('error', 'These credentials do not match our records');
+    }
+
+    public function approve($id)
+    {
+        $user = User::where('id', $id)->get()->first();
+        $user->approved = 1;
+        $user->save();
+        return redirect('/users')->with('message', 'user approved');
     }
 
     protected function validateUser()
@@ -60,7 +101,6 @@ class UsersController extends Controller
                 'firstname' => ['required', 'min:3'],
                 'lastname' => ['required', 'min:3'],
                 'email' => ['required'],
-                'password' => ['required', 'string', 'min:8']
             ]
         );
     }

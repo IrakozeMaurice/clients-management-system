@@ -1,7 +1,9 @@
 @include('partials.header')
 @include('partials.menu')
 <div class="row justify-content-center">
-    @include('partials.sidenav')
+    @auth
+        @include('partials.sidenav')
+    @endauth
     <div class="col-lg-9">
         @include('partials.errors')
         {{-- content section --}}

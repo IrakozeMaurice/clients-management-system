@@ -13,7 +13,8 @@
                         <th>Firstname</th>
                         <th>Lastname</th>
                         <th>Email</th>
-                        <th>role</th>
+                        <th>Role</th>
+                        <th>Approved</th>
                         <th style="display: none">&nbsp;</th>
                         <th style="display: none">&nbsp;</th>
                     </tr>
@@ -31,6 +32,13 @@
                                         Normal
                                     @endif
                             </td>
+                            <td><a href="/users/{{ $user->id }}">
+                                    @if ($user->approved == 1)
+                                        Yes
+                                    @else
+                                        No
+                                    @endif
+                            </td>
 
                             <td class="text-center"><a href="/users/{{ $user->id }}/edit"><button
                                         class="btn btn-light btn-outline-success text-dark btn-sm">Edit</button></a>
@@ -43,6 +51,14 @@
                                         class="btn btn-light btn-outline-danger text-dark btn-sm">
                                 </form>
                             </td>
+                            <td class="text-center">
+                                <form action="/approve/{{ $user->id }}" method="POST" style="display: inline;">
+                                    @csrf
+                                    @method('PATCH')
+                                    <input type="submit" value="Approve"
+                                        class="btn btn-light btn-outline-primary text-dark btn-sm">
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -51,6 +67,7 @@
                     <th>Lastname</th>
                     <th>Email</th>
                     <th>role</th>
+                    <th>Approved</th>
                     <th style="display: none">&nbsp;</th>
                     <th style="display: none">&nbsp;</th>
                 </tfoot>
