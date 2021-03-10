@@ -32,6 +32,10 @@
                     </select>
                 </div><br>
                 <div>
+                    <input type="text" name="domain_name_hosting" placeholder="domain name" class="form-control">
+                </div>
+                <br>
+                <div>
                     <input type="text" name="ns_one_hosting" placeholder="name server one" class="form-control">
                 </div>
                 <br>
@@ -58,7 +62,7 @@
                     </select>
                 </div><br>
                 <div>
-                    <input type="text" name="domain_name" placeholder="domain name" class="form-control">
+                    <input type="text" name="domain_name_domain" placeholder="domain name" class="form-control">
                 </div>
                 <br>
                 <div>

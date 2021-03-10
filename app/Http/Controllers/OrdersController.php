@@ -18,7 +18,7 @@ class OrdersController extends Controller
 
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::orderBy('created_at', 'DESC')->get();
         return view('backend.orders.index', compact('orders'));
     }
 
@@ -43,7 +43,7 @@ class OrdersController extends Controller
                 'service' => $attributes['service'],
                 'package' => $attributes['package_hosting'],
                 'extension' => null,
-                'domain_name' => null,
+                'domain_name' => $attributes['domain_name_hosting'],
                 'ns_one' => $attributes['ns_one_hosting'],
                 'ns_two' => $attributes['ns_two_hosting'],
                 'ns_three' => $attributes['ns_three_hosting'],
@@ -61,7 +61,7 @@ class OrdersController extends Controller
                 'service' => $attributes['service'],
                 'package' => null,
                 'extension' => $attributes['extension'],
-                'domain_name' => $attributes['domain_name'],
+                'domain_name' => $attributes['domain_name_domain'],
                 'ns_one' => $attributes['ns_one_domain'],
                 'ns_two' => $attributes['ns_two_domain'],
                 'ns_three' => $attributes['ns_three_domain'],
@@ -106,7 +106,6 @@ class OrdersController extends Controller
     public function update(Order $order, Request $request)
     {
         $attributes = $request->all();
-        // dd($attributes);
         $attributes['service_id'] = Service::where('name', request('service'))->value('id');
         if ($attributes['service'] == 'Hosting') {
             $attributes['price'] = DB::table('hosting')->where('package_name', $attributes['package_hosting'])->value('price');
@@ -117,7 +116,7 @@ class OrdersController extends Controller
                 'service' => $attributes['service'],
                 'package' => $attributes['package_hosting'],
                 'extension' => null,
-                'domain_name' => null,
+                'domain_name' => $attributes['domain_name_hosting'],
                 'ns_one' => $attributes['ns_one_hosting'],
                 'ns_two' => $attributes['ns_two_hosting'],
                 'ns_three' => $attributes['ns_three_hosting'],
@@ -135,7 +134,7 @@ class OrdersController extends Controller
                 'service' => $attributes['service'],
                 'package' => null,
                 'extension' => $attributes['extension'],
-                'domain_name' => $attributes['domain_name'],
+                'domain_name' => $attributes['domain_name_domain'],
                 'ns_one' => $attributes['ns_one_domain'],
                 'ns_two' => $attributes['ns_two_domain'],
                 'ns_three' => $attributes['ns_three_domain'],

@@ -5,6 +5,7 @@
         $(document).ready(function() {
             $.noConflict();
             $('#tableSearch').DataTable();
+            "order": []
         });
 
     </script>

@@ -28,6 +28,10 @@
                     </select>
                 </div><br>
                 <div>
+                    <input type="text" name="domain_name_hosting" value="{{ $order->domain_name }}" class="form-control">
+                </div>
+                <br>
+                <div>
                     <label for="ns_one_hosting">name server one</label>
                     <input type="text" id="ns_one_hosting" name="ns_one_hosting" value="{{ $order->ns_one }}"
                         class="form-control">
@@ -62,7 +66,7 @@
                     </select>
                 </div><br>
                 <div>
-                    <input type="text" name="domain_name" value="{{ $order->domain_name }}" class="form-control">
+                    <input type="text" name="domain_name_domain" value="{{ $order->domain_name }}" class="form-control">
                 </div>
                 <br>
                 <div>
