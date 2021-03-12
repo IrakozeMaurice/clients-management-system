@@ -44,13 +44,27 @@ function getWebPackages()
 function getExpiringHosting()
 {
     $expiringHostings = Order::where('service', 'Hosting')->orderBy('expiration_date', 'ASC')->get();
-    // $expiringHostings->expiration_date = Carbon::parse($expiringHostings->expiration_date);
     return $expiringHostings;
 }
 
 function getExpiringDomains()
 {
     $expiringDomains = Order::where('service', 'Domain')->orderBy('expiration_date', 'ASC')->get();
-    // $expiringDomains->expiration_date = Carbon::parse($expiringDomains->expiration_date);
     return $expiringDomains;
+}
+
+function getOrdersTotal()
+{
+    $ordersTotal = Order::sum('price');
+    return $ordersTotal;
+}
+
+function getMontlyOrdersTotal()
+{
+    $first = Carbon::today()->startOfMonth()->toDateString();
+    $last = Carbon::today()->endOfMonth()->toDateString();
+
+    $montlyOrdersTotal = Order::whereBetween('created_at', [$first, $last])->sum('price');
+
+    return $montlyOrdersTotal;
 }

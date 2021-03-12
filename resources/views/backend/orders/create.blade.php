@@ -8,7 +8,8 @@
                 <select name="client_id" id="client" class="form-control">
                     <option>select client</option>
                     @foreach ($clients as $client)
-                        <option value="{{ $client->id }}">{{ $client->firstname }} {{ $client->lastaname }}
+                        <option value="{{ $client->id }}">{{ $client->id }}. {{ $client->firstname }}
+                            {{ $client->lastaname }}
                         </option>
                     @endforeach
                 </select>

@@ -2,7 +2,7 @@
 @section('pageTitle', 'Dashboard')
 @section('content')
     {{-- cards section --}}
-    <div class="col-lg-4 col-md-6 mb-4">
+    <div class="col-lg-3 col-md-4 mb-4">
         <div class="card border-left-dark shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <div class="col-lg-4 col-md-6 mb-4">
+    <div class="col-lg-3 col-md-4 mb-4">
         <div class="card border-left-dark shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div class="col-lg-4 col-md-6 mb-4">
+    <div class="col-lg-3 col-md-4 mb-4">
         <div class="card border-left-dark shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="col-lg-4 col-md-6 mb-4">
+    <div class="col-lg-3 col-md-4 mb-4">
         <div class="card border-left-dark shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -81,7 +81,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-4 col-md-6 mb-4">
+    <div class="col-lg-3 col-md-4 mb-4">
         <div class="card border-left-dark shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -100,7 +100,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-4 col-md-6 mb-4">
+    <div class="col-lg-3 col-md-4 mb-4">
         <div class="card border-left-dark shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -114,6 +114,44 @@
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-cogs fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mb-4">
+        <div class="card border-left-dark shadow h-100">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                            Total Orders
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            {{ getOrdersTotal() }}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-euro-sign fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mb-4">
+        <div class="card border-left-dark shadow h-100">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                            Current Month Total
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            {{ getMontlyOrdersTotal() }}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-euro-sign fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>

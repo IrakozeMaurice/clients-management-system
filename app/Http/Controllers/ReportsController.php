@@ -59,7 +59,7 @@ class ReportsController extends Controller
     {
         $clients = Client::whereBetween('created_at', [session('from'), session('to')])->get();
 
-        $pdf = PDF::loadView('backend.reports.clients.clientsList', compact('clients'));
+        $pdf = PDF::loadView('backend.reports.clients.clientsList', compact('clients'))->setPaper('A4', 'landscape');
 
         return $pdf->download('clientsReport.pdf');
     }
@@ -68,7 +68,7 @@ class ReportsController extends Controller
     {
         $orders = Order::whereBetween('created_at', [session('from'), session('to')])->get();
 
-        $pdf = PDF::loadView('backend.reports.orders.ordersList', compact('orders'));
+        $pdf = PDF::loadView('backend.reports.orders.ordersList', compact('orders'))->setPaper('A4', 'landscape');
 
         return $pdf->download('ordersReport.pdf');
     }

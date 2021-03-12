@@ -4,8 +4,9 @@
     <script type="application/javascript">
         $(document).ready(function() {
             $.noConflict();
-            $('#tableSearch').DataTable();
-            "order": []
+            $('#tableSearch').DataTable({
+                "order": []
+            });
         });
 
     </script>
