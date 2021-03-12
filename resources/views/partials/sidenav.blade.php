@@ -89,8 +89,8 @@
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="#">Clients</a>
-                    <a class="collapse-item" href="#">Orders</a>
+                    <a class="collapse-item" href="/reports/clients">Clients</a>
+                    <a class="collapse-item" href="/reports/orders">Orders</a>
                 </div>
             </div>
         </li>

@@ -43,3 +43,15 @@ Route::get('/profile/{profile}', 'ProfilesController@show')->middleware('auth')-
 Route::get('/profile/{id}/edit', 'ProfilesController@edit')->middleware('auth');
 
 Route::patch('/profile/{profile}', 'ProfilesController@update')->middleware('auth');
+
+Route::get('/reports/clients', 'ReportsController@showClientsReport')->middleware('auth');
+
+Route::get('/reports/orders', 'ReportsController@showOrdersReport')->middleware('auth');
+
+Route::post('/reports/clients', 'ReportsController@reportClients')->middleware('auth');
+
+Route::post('/reports/orders', 'ReportsController@reportOrders')->middleware('auth');
+
+Route::get('/reports/clients/pdf', 'ReportsController@clients_export_pdf')->middleware('auth');
+
+Route::get('/reports/orders/pdf', 'ReportsController@orders_export_pdf')->middleware('auth');
