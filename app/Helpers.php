@@ -68,3 +68,9 @@ function getMontlyOrdersTotal()
 
     return $montlyOrdersTotal;
 }
+
+function getExpenseCategories()
+{
+    $expenseCategories = DB::table('expense_categories')->get();
+    return $expenseCategories;
+}

@@ -55,3 +55,7 @@ Route::post('/reports/orders', 'ReportsController@reportOrders')->middleware('au
 Route::get('/reports/clients/pdf', 'ReportsController@clients_export_pdf')->middleware('auth');
 
 Route::get('/reports/orders/pdf', 'ReportsController@orders_export_pdf')->middleware('auth');
+
+Route::resource('expenseCategories', 'ExpenseCategoryController')->middleware('auth');
+
+Route::resource('expenses', 'ExpensesController')->middleware('auth');
