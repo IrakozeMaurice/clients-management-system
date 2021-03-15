@@ -7,9 +7,10 @@
             @csrf
             <div>
                 <label for="role">select role</label>
-                <select name="is_admin" id="role" class="form-control">
-                    <option value="0">Normal User</option>
-                    <option value="1">Administrator</option>
+                <select name="role" id="role" class="form-control">
+                    <option value="user">User</option>
+                    <option value="admin">Administrator</option>
+                    <option value="finance">Finance</option>
                 </select>
             </div>
             <br>

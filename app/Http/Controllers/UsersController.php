@@ -20,12 +20,23 @@ class UsersController extends Controller
         return view('backend.users.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
         $attributes = $this->validateUser();
         $attributes['password'] = Hash::make('');
-        $attributes['is_admin'] = request('is_admin');
-        $user = User::create($attributes);
+        $attributes['is_finance'] = ($attributes['role'] == 'finance') ? true : false;
+        $attributes['is_admin'] = ($attributes['role'] == 'admin') ? true : false;
+        $attributes['approved'] = false;
+        $user = new User();
+        $user->firstname = $attributes['firstname'];
+        $user->lastname = $attributes['lastname'];
+        $user->email = $attributes['email'];
+        $user->password = $attributes['password'];
+        $user->is_finance = $attributes['is_finance'];
+        $user->is_admin = $attributes['is_admin'];
+        $user->approved = $attributes['approved'];
+
+        $user->save();
         Profile::create([
             'user_id' => $user->id,
             'email' => $user->email,
@@ -42,20 +53,20 @@ class UsersController extends Controller
 
     public function edit(User $user)
     {
-        abort_unless($user->id == auth()->id(), 403, 'You are not authorized to view this page');
+        abort_unless($user->id == auth()->id() || auth()->user()->is_admin == 1, 403, 'You are not authorized to view this page');
         return view('backend.users.edit', compact('user'));
     }
 
-    public function update(User $user, Request $request)
+    public function update(User $user)
     {
-
         $attributes = $this->validateUser();
         $user->firstname = $attributes['firstname'];
         $user->lastname = $attributes['lastname'];
         $user->email = $attributes['email'];
-        $user->is_admin = request('is_admin');
+        $user->is_finance = request('role') === 'finance' ? true : false;
+        $user->is_admin = request('role') === 'admin' ? true : false;
         $user->save();
-        return redirect('/profile')->with('message', 'profile updated');
+        return redirect('/users')->with('message', 'profile updated');
     }
 
     public function destroy(User $user)
@@ -101,6 +112,7 @@ class UsersController extends Controller
                 'firstname' => ['required', 'min:3'],
                 'lastname' => ['required', 'min:3'],
                 'email' => ['required'],
+                'role' => ['required'],
             ]
         );
     }

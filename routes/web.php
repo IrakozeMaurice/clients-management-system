@@ -56,6 +56,6 @@ Route::get('/reports/clients/pdf', 'ReportsController@clients_export_pdf')->midd
 
 Route::get('/reports/orders/pdf', 'ReportsController@orders_export_pdf')->middleware('auth');
 
-Route::resource('expenseCategories', 'ExpenseCategoryController')->middleware('auth');
+Route::resource('expenseCategories', 'ExpenseCategoryController')->middleware(['auth', 'is_finance']);
 
-Route::resource('expenses', 'ExpensesController')->middleware('auth');
+Route::resource('expenses', 'ExpensesController')->middleware(['auth', 'is_finance']);

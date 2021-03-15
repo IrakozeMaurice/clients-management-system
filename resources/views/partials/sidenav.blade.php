@@ -74,19 +74,21 @@
                 </div>
             </li>
         @endif
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive"
-                aria-expanded="true" aria-controls="collapseFive">
-                <i class="fas fa-fw fa-user"></i>
-                <span>Finance</span>
-            </a>
-            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="/expenseCategories">Expense Categories</a>
-                    <a class="collapse-item" href="/expenses">Expenses</a>
+        @if (auth()->user()->is_finance || auth()->user()->is_admin)
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive"
+                    aria-expanded="true" aria-controls="collapseFive">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Finance</span>
+                </a>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/expenseCategories">Expense Categories</a>
+                        <a class="collapse-item" href="/expenses">Expenses</a>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
+        @endif
         <!-- Divider -->
         <hr class="sidebar-divider">
         <!-- Heading -->

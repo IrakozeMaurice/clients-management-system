@@ -6,12 +6,14 @@
         <hr>
         <h4>{{ $user->firstname }} {{ $user->lastname }}</h4>
         <small>email: {{ $user->email }}</small><br>
-        <small>role: @if ($user->is_admin == 1)
-                Administrator
+        <h6>role: @if ($user->is_admin == 1)
+                <span class="badge badge-danger badge-pill">admin</span>
+            @elseif ($user->is_finance == 1)
+                <span class="badge badge-info badge-pill">finance</span>
             @else
-                Normal user
-            @endif</small><br>
-        <br>
+                <span class="badge badge-primary badge-pill">user</span>
+            @endif
+        </h6><br>
         <a href="/users/{{ $user->id }}/edit"><button
                 class="btn btn-light btn-outline-success text-dark btn-sm">Edit</button></a>
         <form action="/users/{{ $user->id }}" method="POST" style="display: inline;">

@@ -8,9 +8,10 @@
             @method('PATCH')
             <div>
                 <label for="role">role</label>
-                <select name="is_admin" id="role" class="form-control">
-                    <option value="1" @if ($user->is_admin == 1) selected @endif>Administrator</option>
-                    <option value="0" @if ($user->is_admin == 0) selected @endif>Normal user</option>
+                <select name="role" id="role" class="form-control">
+                    <option value="admin" @if ($user->is_admin == 1) selected @endif>Administrator</option>
+                    <option value="user" @if ($user->is_admin == 0) selected @endif>User</option>
+                    <option value="finance" @if ($user->is_finance == 1) selected @endif>Finance</option>
                 </select>
             </div>
             <br>

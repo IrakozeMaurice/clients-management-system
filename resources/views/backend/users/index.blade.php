@@ -25,13 +25,15 @@
                             <td><a href="/users/{{ $user->id }}">{{ $user->firstname }}</td>
                             <td><a href="/users/{{ $user->id }}">{{ $user->lastname }}</td>
                             <td><a href="/users/{{ $user->id }}">{{ $user->email }}</td>
-                            <td><a href="/users/{{ $user->id }}">
+                            <td class="text-center"><a href="/users/{{ $user->id }}">
                                     @if ($user->is_admin == 1)
-                                        Admin
+                                        <span class="badge badge-danger badge-pill">admin</span>
+                                    @elseif ($user->is_finance == 1)
+                                        <span class="badge badge-info badge-pill">finance</span>
                                     @else
-                                        Normal
+                                        <span class="badge badge-primary badge-pill">user</span>
                                     @endif
-                            </td>
+                                </a></td>
                             <td><a href="/users/{{ $user->id }}">
                                     @if ($user->approved == 1)
                                         Yes
