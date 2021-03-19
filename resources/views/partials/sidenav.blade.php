@@ -1,4 +1,4 @@
-<div class="col-lg-3">
+<div class="col-lg-2 float-left pl-0">
     <!-- Sidebar -->
     <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
         <!-- Divider -->

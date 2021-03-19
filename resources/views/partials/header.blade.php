@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     {{-- <link href="{{ asset('css/bootstrap-datepicker.css') }}" rel=" stylesheet">
     <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script> --}}
     <link rel="stylesheet"
@@ -30,5 +30,4 @@
 </head>
 
 <body>
-    <div id="app">
-        <div class="container-fluid">
+    <div>

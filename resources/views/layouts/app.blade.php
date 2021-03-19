@@ -1,13 +1,13 @@
 @include('partials.header')
-@include('partials.menu')
-<div class="row justify-content-center">
-    @auth
-        @include('partials.sidenav')
-    @endauth
-    <div class="col-lg-9">
+@auth
+    @include('partials.sidenav')
+@endauth
+<div class="row">
+    @include('partials.menu')
+    <div class="col-lg-12 container">
         @include('partials.errors')
         {{-- content section --}}
-        <div class="row">
+        <div class="row container-fluid">
             @yield('content')
         </div>
         {{-- end content section --}}
