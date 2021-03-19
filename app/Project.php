@@ -1,0 +1,26 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Project extends Model
+{
+
+    protected $guarded = [];
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function assigned_To()
+    {
+        return $this->belongsTo(User::class, 'assignedTo');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+}

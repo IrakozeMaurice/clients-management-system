@@ -1,5 +1,6 @@
 <?php
 
+
 Route::get('/', function () {
     return view('auth.login');
 })->middleware('guest');
@@ -59,3 +60,19 @@ Route::get('/reports/orders/pdf', 'ReportsController@orders_export_pdf')->middle
 Route::resource('expenseCategories', 'ExpenseCategoryController')->middleware(['auth', 'is_finance']);
 
 Route::resource('expenses', 'ExpensesController')->middleware(['auth', 'is_finance']);
+
+Route::resource('projects', 'ProjectsController')->names([
+    'show' => 'projects.show'
+]);
+
+Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
+
+Route::patch('/tasks/{task}', 'ProjectTasksController@update');
+
+Route::get('/tasks/{task}', 'ProjectTasksController@show');
+
+Route::get('/tasks/{task}/edit', 'ProjectTasksController@edit');
+
+Route::patch('/edittask/{task}', 'ProjectTasksController@updateTask');
+
+Route::delete('/tasks/{task}', 'ProjectTasksController@destroy');
