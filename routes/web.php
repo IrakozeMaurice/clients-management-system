@@ -49,13 +49,19 @@ Route::get('/reports/clients', 'ReportsController@showClientsReport')->middlewar
 
 Route::get('/reports/orders', 'ReportsController@showOrdersReport')->middleware('auth');
 
+Route::get('/reports/expenses', 'ReportsController@showExpensesReport')->middleware('auth');
+
 Route::post('/reports/clients', 'ReportsController@reportClients')->middleware('auth');
 
 Route::post('/reports/orders', 'ReportsController@reportOrders')->middleware('auth');
 
+Route::post('/reports/expenses', 'ReportsController@reportExpenses')->middleware('auth');
+
 Route::get('/reports/clients/pdf', 'ReportsController@clients_export_pdf')->middleware('auth');
 
 Route::get('/reports/orders/pdf', 'ReportsController@orders_export_pdf')->middleware('auth');
+
+Route::get('/reports/expenses/pdf', 'ReportsController@expenses_export_pdf')->middleware('auth');
 
 Route::resource('expenseCategories', 'ExpenseCategoryController')->middleware(['auth', 'is_finance']);
 
