@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pageTitle', 'Orders Report')
 @section('content')
-    <div class="col-lg-10">
+    <div class="col-lg-12">
         <h1 class="h4">Orders Report</h1>
         <hr>
         <form action="/reports/orders" method="post" class="row">
@@ -20,7 +20,7 @@
         </form>
         <hr>
         <div>
-            <a class="btn btn-primary" href="{{ URL::to('/reports/orders/pdf') }}">Export to PDF</a><br><br>
+            <a class="btn btn-primary btn-sm" href="{{ URL::to('/reports/orders/pdf') }}">Export to PDF</a><br><br>
             <table id="tableSearch" class="table table-bordered table-hover table-sm small w-100">
                 <thead>
                     <tr>
@@ -44,20 +44,21 @@
                             <td>{{ $order->package }}</td>
                             <td>{{ $order->extension }}</td>
                             <td>{{ $order->domain_name }}</td>
-                            <td>{{ $order->price }}</td>
+                            <td>{{ number_format($order->price, 0, null, ',') }}</td>
                             <td>{{ $order->expiration_date }}</td>
                         </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <tr style="display: none">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </tfoot>
             </table>

@@ -74,3 +74,9 @@ function getExpenseCategories()
     $expenseCategories = DB::table('expense_categories')->get();
     return $expenseCategories;
 }
+
+function getAllProjects()
+{
+    $projects = DB::table('projects')->get();
+    return $projects;
+}

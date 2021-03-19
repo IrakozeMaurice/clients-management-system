@@ -4,7 +4,8 @@
     <div class="col-lg-6">
         <h1 class="h4">order information</h1>
         <hr>
-        <small>names: {{ $order->client->firstname }} {{ $order->client->lastname }}</small><br>
+        <small>names: <a href="/clients/{{ $order->client->id }}">{{ $order->client->firstname }}
+                {{ $order->client->lastname }}</a></small><br>
         <small>service: {{ $order->service }}</small><br>
         <small>package: {{ $order->package }}</small><br>
         <small>domain name: {{ $order->domain_name }}</small><br>
@@ -16,8 +17,8 @@
                 <li>{{ $order->ns_three }}</li>
                 <li>{{ $order->ns_four }}</li>
             </ol>
-        </small><br>
-        <small>price: {{ $order->price }}</small><br>
+        </small>
+        <small>price: {{ number_format($order->price, 0, null, ',') }}</small><br>
         <small>registration date: {{ $order->registration_date }}</small><br>
         <small>expiration date: {{ $order->expiration_date }}</small><br>
         <br>

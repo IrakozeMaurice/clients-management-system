@@ -105,7 +105,7 @@
                 </div><br>
             </div>
             <div>
-                <button type="submit" class="btn btn-dark">Update Order</button>
+                <button type="submit" class="btn btn-dark btn-sm">Update Order</button>
             </div>
         </form><br>
     </div>

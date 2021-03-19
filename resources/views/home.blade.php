@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-users fa-2x text-gray-300"></i>
+                        <i class="fas fa-users fa-2x text-primary-300"></i>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-cart-plus fa-2x text-gray-300"></i>
+                        <i class="fas fa-cart-plus fa-2x text-primary-300"></i>
                     </div>
                 </div>
             </div>
@@ -48,14 +48,14 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                            services
+                            Projects
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            {{ getAllServices()->count() }}
+                            {{ getAllProjects()->count() }}
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-cogs fa-2x text-gray-300"></i>
+                        <i class="fas fa-cogs fa-2x text-primary-300"></i>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-cogs fa-2x text-gray-300"></i>
+                        <i class="fas fa-cogs fa-2x text-primary-300"></i>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-cogs fa-2x text-gray-300"></i>
+                        <i class="fas fa-cogs fa-2x text-primary-300"></i>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-cogs fa-2x text-gray-300"></i>
+                        <i class="fas fa-cogs fa-2x text-primary-300"></i>
                     </div>
                 </div>
             </div>
@@ -128,11 +128,11 @@
                             Total Orders
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            {{ getOrdersTotal() }}
+                            {{ number_format(getOrdersTotal(), 0, null, ',') }}
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-euro-sign fa-2x text-gray-300"></i>
+                        <i class="fas fa-euro-sign fa-2x text-primary-300"></i>
                     </div>
                 </div>
             </div>
@@ -147,11 +147,11 @@
                             Current Month Total
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            {{ getMontlyOrdersTotal() }}
+                            {{ number_format(getMontlyOrdersTotal(), 0, null, ',') }}
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-euro-sign fa-2x text-gray-300"></i>
+                        <i class="fas fa-euro-sign fa-2x text-primary-300"></i>
                     </div>
                 </div>
             </div>
@@ -162,28 +162,31 @@
     <div class="col-lg-12">
         <hr>
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 <ul class="list-group">
                     <li class="list-group-item bg-dark active">Expiring Domains Orders</li>
                     @foreach ($expiringDomains = getExpiringDomains() as $expiringDomain)
                         <li class="list-group-item text-left">
-                            {{ $expiringDomain->expiration_date }} |
-                            <small>{{ $expiringDomain->domain_name }}{{ $expiringDomain->extension }}</small>
-                            <span class="badge badge-info badge-pill float-right">{{ $expiringDomain->price }}</span>
+                            {{ $expiringDomain->expiration_date }} <span class="v-divider px-2">|</span>
+                            <small><a
+                                    href="/orders/{{ $expiringDomain->id }}">{{ $expiringDomain->domain_name }}{{ $expiringDomain->extension }}</a></small>
+                            <span
+                                class="badge badge-info badge-pill float-right px-3 py-1">{{ number_format($expiringDomain->price, 0, null, ',') }}</span>
                         </li>
                     @endforeach
                 </ul>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <ul class="list-group">
                     <li class="list-group-item bg-dark active">Expiring Hosting Orders</li>
                     @foreach ($expiringHostings = getExpiringHosting() as $expiringHosting)
                         <li class="list-group-item text-left">
-                            {{ $expiringHosting->expiration_date }} |
+                            {{ $expiringHosting->expiration_date }} <span class="v-divider px-4">|</span>
                             <small><a
                                     href="/orders/{{ $expiringHosting->id }}">{{ $expiringHosting->client->firstname }}{{ $expiringHosting->client->lastname }}</a></small>
-                            <span class="badge badge-info badge-pill float-right">{{ $expiringHosting->price }}</span>
+                            <span
+                                class="badge badge-info badge-pill float-right px-3 py-1">{{ number_format($expiringHosting->price, 0, null, ',') }}</span>
                         </li>
                     @endforeach
                 </ul>

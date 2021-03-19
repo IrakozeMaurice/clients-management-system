@@ -15,7 +15,7 @@
             </div>
             <br>
             <div>
-                <button type="submit" class="btn btn-dark">Update package</button>
+                <button type="submit" class="btn btn-dark btn-sm">Update package</button>
             </div>
         </form><br>
     </div>

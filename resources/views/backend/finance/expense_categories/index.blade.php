@@ -11,28 +11,22 @@
             <table id="tableSearch" class="table table-bordered table-hover table-sm small w-100">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Category Name</th>
-                        <th>Description</th>
-                        <th style="display: none">&nbsp;</th>
-                        <th style="display: none">&nbsp;</th>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Category Name</th>
+                        <th class="text-center">Description</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($expenseCategories as $expenseCategory)
                         <tr>
-                            <td><a href="/expenseCategories/{{ $expenseCategory->id }}">{{ $expenseCategory->id }}</a>
+                            <td class="text-center"><a
+                                    href="/expenseCategories/{{ $expenseCategory->id }}">{{ $expenseCategory->id }}</a>
                             </td>
-                            <td><a
-                                    href="/expenseCategories/{{ $expenseCategory->id }}">{{ $expenseCategory->categoryName }}</a>
-                            </td>
-                            <td><a
-                                    href="/expenseCategories/{{ $expenseCategory->id }}">{{ $expenseCategory->description }}</a>
-                            </td>
+                            <td>{{ $expenseCategory->categoryName }}</td>
+                            <td>{{ $expenseCategory->description }}</td>
                             <td class="text-center"><a href="/expenseCategories/{{ $expenseCategory->id }}/edit"><button
                                         class="btn btn-light btn-outline-success text-dark btn-sm">Edit</button></a>
-                            </td>
-                            <td class="text-center">
                                 <form action="/expenseCategories/{{ $expenseCategory->id }}" method="POST"
                                     style="display: inline;">
                                     @csrf
@@ -46,11 +40,10 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Id</th>
-                        <th>Category Name</th>
-                        <th>Description</th>
-                        <th style="display: none">&nbsp;</th>
-                        <th style="display: none">&nbsp;</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </tfoot>
             </table>

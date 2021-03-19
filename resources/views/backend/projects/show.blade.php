@@ -7,8 +7,10 @@
         <hr>
         <h1 class="h5">{{ $project->title }}</h1>
         <small>Description: {{ $project->description }}</small><br>
-        <small>Client: {{ $project->client->firstname }} {{ $project->client->lastname }}</small><br>
-        <small>Assigned to: {{ $project->assigned_To->firstname }} {{ $project->assigned_To->lastname }}</small><br>
+        <small>Client: <a href="/clients/{{ $project->client->id }}">{{ $project->client->firstname }}
+                {{ $project->client->lastname }}</a></small><br>
+        <small>Assigned to: <a href="/users/{{ $project->assigned_To->id }}">{{ $project->assigned_To->firstname }}
+                {{ $project->assigned_To->lastname }}</a></small><br>
         <small>Created: {{ $project->created_at->diffForHumans() }}</small><br>
         <small>Status: @if ($project->status == 'todo')
                 <span class="badge px-4 py-1 text-uppercase badge-warning badge-pill">{{ $project->status }}</span>

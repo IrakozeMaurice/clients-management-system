@@ -18,6 +18,7 @@
         td {
             border: 1px solid black;
             border-collapse: collapse;
+            padding: 10px;
         }
 
         title {
@@ -53,13 +54,13 @@
                         <td>{{ $order->package }}</td>
                         <td>{{ $order->extension }}</td>
                         <td>{{ $order->domain_name }}</td>
-                        <td>{{ $order->price }}</td>
+                        <td>{{ number_format($order->price, 0, null, ',') }}</td>
                         <td>{{ $order->expiration_date }}</td>
                     </tr>
                 @endforeach
             </tbody>
             <tfoot>
-                <tr>
+                <tr style="display: none">
                     <th></th>
                     <th></th>
                     <th></th>

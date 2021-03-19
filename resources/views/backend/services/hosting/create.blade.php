@@ -38,7 +38,7 @@
             </div>
             <br>
             <div>
-                <button type="submit" class="btn btn-dark">Add package</button>
+                <button type="submit" class="btn btn-dark btn-sm">Add package</button>
             </div>
         </form><br>
     </div>

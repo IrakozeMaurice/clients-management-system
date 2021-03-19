@@ -14,7 +14,7 @@
             </div>
             <br>
             <div>
-                <button type="submit" class="btn btn-dark">Add</button>
+                <button type="submit" class="px-4 btn btn-dark btn-sm">Add</button>
             </div>
         </form><br>
     </div>

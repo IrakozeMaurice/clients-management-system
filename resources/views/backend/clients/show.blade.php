@@ -2,7 +2,7 @@
 @section('pageTitle', 'client info')
 @section('content')
     <div class="col-lg-6">
-        <h1 class="h4">client information</h1>
+        <h1 class="h4 lead text-gray-800">Client information</h1>
         <hr>
         <h4>{{ $client->firstname }} {{ $client->lastname }}</h4>
         <small>email: {{ $client->email }}</small><br>

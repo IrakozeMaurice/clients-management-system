@@ -27,7 +27,7 @@
             </div>
             <br>
             <div>
-                <button type="submit" class="btn btn-dark">Add user</button>
+                <button type="submit" class="btn btn-dark btn-sm">Add user</button>
             </div>
         </form><br>
     </div>

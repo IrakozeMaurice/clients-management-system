@@ -10,55 +10,51 @@
             <table id="tableSearch" class="table table-responsive table-bordered table-hover table-sm small w-100">
                 <thead>
                     <tr>
-                        <th>package</th>
-                        <th>disc space</th>
-                        <th>bandwidth</th>
-                        <th>email accounts</th>
-                        <th>parked domains</th>
-                        <th>subdomains</th>
-                        <th>ftp accounts</th>
-                        <th>price</th>
-                        <th style="display: none">&nbsp;</th>
-                        <th style="display: none">&nbsp;</th>
+                        <th>Id</th>
+                        <th>Package</th>
+                        <th>Space</th>
+                        <th>Bandwidth</th>
+                        <th>Email Accounts</th>
+                        <th>Subdomains</th>
+                        <th>FTP Accounts</th>
+                        <th>Price</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($hostings as $hosting)
                         <tr>
-                            <td><a href="/hostings/{{ $hosting->id }}">{{ $hosting->package_name }}</td>
-                            <td><a href="/hostings/{{ $hosting->id }}">{{ $hosting->disc_space }}</td>
-                            <td><a href="/hostings/{{ $hosting->id }}">{{ $hosting->bandwidth }}</td>
-                            <td><a href="/hostings/{{ $hosting->id }}">{{ $hosting->email_accounts }}</td>
-                            <td><a href="/hostings/{{ $hosting->id }}">{{ $hosting->parked_domains }}</td>
-                            <td><a href="/hostings/{{ $hosting->id }}">{{ $hosting->subdomain }}</td>
-                            <td><a href="/hostings/{{ $hosting->id }}">{{ $hosting->ftp_accounts }}</td>
-                            <td><a href="/hostings/{{ $hosting->id }}">{{ $hosting->price }}</td>
+                            <td><a href="/hostings/{{ $hosting->id }}">{{ $hosting->id }}</a></td>
+                            <td>{{ $hosting->package_name }}</td>
+                            <td>{{ $hosting->disc_space }}</td>
+                            <td>{{ $hosting->bandwidth }}</td>
+                            <td>{{ $hosting->email_accounts }}</td>
+                            <td>{{ $hosting->subdomain }}</td>
+                            <td>{{ $hosting->ftp_accounts }}</td>
+                            <td>{{ number_format($hosting->price, 0, null, ',') }}</td>
 
                             <td class="text-center"><a href="/hostings/{{ $hosting->id }}/edit"><button
-                                        class="btn btn-light btn-outline-success text-dark btn-sm btn-block">Edit</button></a>
-                            </td>
-                            <td class="text-center">
+                                        class="btn btn-light btn-outline-success text-dark btn-sm">Edit</button></a>
                                 <form action="/hostings/{{ $hosting->id }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
                                     <input type="submit" value="Delete"
-                                        class="btn btn-light btn-outline-danger text-dark btn-sm btn-block">
+                                        class="btn btn-light btn-outline-danger text-dark btn-sm">
                                 </form>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
-                    <th>package</th>
-                    <th>disc space</th>
-                    <th>bandwidth</th>
-                    <th>email accounts</th>
-                    <th>parked domains</th>
-                    <th>subdomains</th>
-                    <th>ftp accounts</th>
-                    <th>price</th>
-                    <th style="display: none">&nbsp;</th>
-                    <th style="display: none">&nbsp;</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                     </tr>
                 </tfoot>
             </table>

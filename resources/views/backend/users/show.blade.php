@@ -6,12 +6,12 @@
         <hr>
         <h4>{{ $user->firstname }} {{ $user->lastname }}</h4>
         <small>email: {{ $user->email }}</small><br>
-        <h6>role: @if ($user->is_admin == 1)
-                <span class="badge badge-danger badge-pill">admin</span>
+        <h6 class="mt-1">role: @if ($user->is_admin == 1)
+                <span class="badge badge-danger badge-pill px-3 py-1">admin</span>
             @elseif ($user->is_finance == 1)
-                <span class="badge badge-info badge-pill">finance</span>
+                <span class="badge badge-success badge-pill px-3 py-1">finance</span>
             @else
-                <span class="badge badge-primary badge-pill">user</span>
+                <span class="badge badge-primary badge-pill px-3 py-1">user</span>
             @endif
         </h6><br>
         <a href="/users/{{ $user->id }}/edit"><button

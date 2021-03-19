@@ -22,13 +22,13 @@
                 <tbody>
                     @foreach ($projects as $project)
                         <tr>
-                            <td><a href="/projects/{{ $project->id }}">{{ $project->id }}</td>
-                            <td><a href="/projects/{{ $project->id }}">{{ $project->client->firstname }}
-                                    {{ $project->client->lastname }}</td>
-                            <td><a href="/projects/{{ $project->id }}">{{ $project->assigned_To->firstname }}
-                                    {{ $project->assigned_To->lastname }}</td>
-                            <td><a href="/projects/{{ $project->id }}">{{ $project->title }}</td>
-                            <td><a href="/projects/{{ $project->id }}">{{ $project->description }}</td>
+                            <td class="text-center"><a href="/projects/{{ $project->id }}">{{ $project->id }}</a></td>
+                            <td>{{ $project->client->firstname }}
+                                {{ $project->client->lastname }}</td>
+                            <td>{{ $project->assigned_To->firstname }}
+                                {{ $project->assigned_To->lastname }}</td>
+                            <td>{{ $project->title }}</td>
+                            <td>{{ $project->description }}</td>
                             <td>
                                 <div class="progress">
                                     <div class="progress-bar bg-success" role="progressbar"

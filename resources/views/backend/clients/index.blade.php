@@ -10,27 +10,24 @@
             <table id="tableSearch" class="table table-responsive table-bordered table-hover table-sm small w-100">
                 <thead>
                     <tr>
+                        <th class="text-center">Client Id</th>
                         <th class="text-center">Firstname</th>
                         <th class="text-center">Lastname</th>
                         <th class="text-center">Email</th>
                         <th class="text-center">Phone</th>
-                        <th class="text-center">Address</th>
-                        <th style="display: none">&nbsp;</th>
-                        <th style="display: none">&nbsp;</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($clients as $client)
                         <tr>
-                            <td><a href="/clients/{{ $client->id }}">{{ $client->firstname }}</td>
-                            <td><a href="/clients/{{ $client->id }}">{{ $client->lastname }}</td>
-                            <td><a href="/clients/{{ $client->id }}">{{ $client->email }}</td>
-                            <td><a href="/clients/{{ $client->id }}">{{ $client->phone }}</td>
-                            <td><a href="/clients/{{ $client->id }}">{{ $client->address }}</td>
+                            <td class="text-center"><a href="/clients/{{ $client->id }}">{{ $client->id }}</td>
+                            <td>{{ $client->firstname }}</td>
+                            <td>{{ $client->lastname }}</td>
+                            <td>{{ $client->email }}</td>
+                            <td>{{ $client->phone }}</td>
                             <td><a href="/clients/{{ $client->id }}/edit"><button
                                         class="btn btn-light btn-outline-success text-dark btn-sm">Edit</button></a>
-                            </td>
-                            <td>
                                 <form action="/clients/{{ $client->id }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
@@ -43,13 +40,11 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th class="text-center">Firstname</th>
-                        <th class="text-center">Lastname</th>
-                        <th class="text-center">Email</th>
-                        <th class="text-center">Phone</th>
-                        <th class="text-center">Address</th>
-                        <th style="display: none">&nbsp;</th>
-                        <th style="display: none">&nbsp;</th>
+                        <th class="text-center"></th>
+                        <th class="text-center"></th>
+                        <th class="text-center"></th>
+                        <th class="text-center"></th>
+                        <th style="display: none"></th>
                     </tr>
                 </tfoot>
             </table>

@@ -10,30 +10,27 @@
             <table id="tableSearch" class="table table-bordered table-hover table-sm small w-100">
                 <thead>
                     <tr>
-                        <th>Category</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Amount</th>
-                        <th style="display: none">&nbsp;</th>
-                        <th style="display: none">&nbsp;</th>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Category</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Description</th>
+                        <th class="text-center">Amount</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($expenses as $expense)
                         <tr>
-                            <td><a href="/expenses/{{ $expense->id }}">{{ $expense->expenseCategory->categoryName }}</a>
-                            </td>
+                            <td><a href="/expenses/{{ $expense->id }}">{{ $expense->id }}</a></td>
+                            <td>{{ $expense->expenseCategory->categoryName }}</td>
+                            <td>{{ $expense->name }}</td>
 
-                            <td><a href="/expenses/{{ $expense->id }}">{{ $expense->name }}</a></td>
+                            <td>{{ $expense->description }}</td>
 
-                            <td><a href="/expenses/{{ $expense->id }}">{{ $expense->description }}</a></td>
-
-                            <td><a href="/expenses/{{ $expense->id }}">{{ $expense->amount }}</a></td>
+                            <td>{{ number_format($expense->amount, 0, null, ',') }}</td>
 
                             <td class="text-center"><a href="/expenses/{{ $expense->id }}/edit"><button
                                         class="btn btn-light btn-outline-success text-dark btn-sm">Edit</button></a>
-                            </td>
-                            <td class="text-center">
                                 <form action="/expenses/{{ $expense->id }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
@@ -46,12 +43,12 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Category</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Amount</th>
-                        <th style="display: none">&nbsp;</th>
-                        <th style="display: none">&nbsp;</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </tfoot>
             </table>

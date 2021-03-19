@@ -19,7 +19,7 @@
         </form>
         <hr>
         <div>
-            <a class="btn btn-primary" href="{{ URL::to('/reports/clients/pdf') }}">Export to PDF</a><br><br>
+            <a class="btn btn-primary btn-sm" href="{{ URL::to('/reports/clients/pdf') }}">Export to PDF</a><br><br>
             <table id="tableSearch" class="table table-bordered table-hover table-sm small w-100">
                 <thead>
                     <tr>

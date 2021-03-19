@@ -5,7 +5,7 @@
         <h1 class="h4">package information</h1>
         <hr>
         <small>package name: {{ $package->package_name }}</small><br>
-        <small>price: {{ $package->price }}</small><br>
+        <small>price: {{ number_format($package->price, 0, null, ',') }}</small><br>
         <br>
         <a href="/web/{{ $package->id }}/edit"><button
                 class="btn btn-light btn-outline-success text-dark btn-sm">Edit</button></a>

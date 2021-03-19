@@ -18,6 +18,7 @@
         td {
             border: 1px solid black;
             border-collapse: collapse;
+            padding: 10px;
         }
 
         .title {
@@ -52,7 +53,7 @@
                 @endforeach
             </tbody>
             <tfoot>
-                <tr>
+                <tr style="display: none">
                     <th></th>
                     <th></th>
                     <th></th>

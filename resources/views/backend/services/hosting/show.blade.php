@@ -11,7 +11,7 @@
         <small>parked domains: {{ $package->parked_domains }}</small><br>
         <small>subdomains: {{ $package->subdomain }}</small><br>
         <small>ftp accounts: {{ $package->ftp_accounts }}</small><br>
-        <small>price: {{ $package->price }}</small><br>
+        <small>price: {{ number_format($package->price, 0, null, ',') }}</small><br>
         <br>
         <a href="/hostings/{{ $package->id }}/edit"><button
                 class="btn btn-light btn-outline-success text-dark btn-sm">Edit</button></a>

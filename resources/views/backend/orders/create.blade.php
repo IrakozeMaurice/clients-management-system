@@ -94,7 +94,7 @@
                 </div><br>
             </div>
             <div>
-                <button type="submit" class="btn btn-dark">Save Order</button>
+                <button type="submit" class="btn btn-dark btn-sm">Save Order</button>
             </div>
         </form>
     </div>

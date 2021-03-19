@@ -10,27 +10,26 @@
             <table id="tableSearch" class="table table-bordered table-hover table-lg small w-100">
                 <thead>
                     <tr>
-                        <th>extension</th>
-                        <th>price</th>
-                        <th style="display: none">&nbsp;</th>
-                        <th style="display: none">&nbsp;</th>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Extension</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($domains as $domain)
                         <tr>
-                            <td><a href="/domains/{{ $domain->id }}">{{ $domain->extension }}</td>
-                            <td><a href="/domains/{{ $domain->id }}">{{ $domain->price }}</td>
+                            <td class="text-center"><a href="/domains/{{ $domain->id }}">{{ $domain->id }}</a></td>
+                            <td>{{ $domain->extension }}</td>
+                            <td>{{ number_format($domain->price, 0, null, ',') }}</td>
 
                             <td class="text-center"><a href="/domains/{{ $domain->id }}/edit"><button
-                                        class="btn btn-light btn-outline-success text-dark btn-sm btn-block">Edit</button></a>
-                            </td>
-                            <td class="text-center">
+                                        class="btn btn-light btn-outline-success text-dark btn-sm">Edit</button></a>
                                 <form action="/domains/{{ $domain->id }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
                                     <input type="submit" value="Delete"
-                                        class="btn btn-light btn-outline-danger text-dark btn-sm btn-block">
+                                        class="btn btn-light btn-outline-danger text-dark btn-sm">
                                 </form>
                             </td>
                         </tr>
@@ -38,10 +37,10 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>extension</th>
-                        <th>price</th>
-                        <th style="display: none">&nbsp;</th>
-                        <th style="display: none">&nbsp;</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </tfoot>
             </table>

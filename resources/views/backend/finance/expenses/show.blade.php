@@ -7,7 +7,7 @@
         <small>Expense Category: {{ $expense->expenseCategory->categoryName }}</small><br>
         <small>Expense name: {{ $expense->name }}</small><br>
         <small>Description: {{ $expense->description }}</small><br>
-        <small>Amount: {{ $expense->amount }}</small><br>
+        <small>Amount: {{ number_format($expense->amount, 0, null, ',') }}</small><br>
         <br>
         <a href="/expenses/{{ $expense->id }}/edit"><button
                 class="btn btn-light btn-outline-success text-dark btn-sm">Edit</button></a>
