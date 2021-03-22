@@ -31,16 +31,18 @@
                                         <span class="badge badge-danger badge-pill px-3 py-1">admin</span>
                                     @elseif ($user->is_finance == 1)
                                         <span class="badge badge-info badge-pill px-3 py-1">finance</span>
+                                    @elseif ($user->is_tech == 1)
+                                        <span class="badge badge-dark badge-pill px-3 py-1">tech</span>
                                     @else
                                         <span class="badge badge-primary badge-pill px-3 py-1">user</span>
                                     @endif
                                 </a></td>
-                            <td class="text-center"><a href="/users/{{ $user->id }}">
-                                    @if ($user->approved == 1)
-                                        Yes
-                                    @else
-                                        No
-                                    @endif
+                            <td class="text-center">
+                                @if ($user->approved == 1)
+                                    Yes
+                                @else
+                                    No
+                                @endif
                             </td>
 
                             <td class="text-center"><a href="/users/{{ $user->id }}/edit"><button

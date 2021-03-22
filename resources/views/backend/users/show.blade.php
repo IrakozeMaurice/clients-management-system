@@ -10,6 +10,8 @@
                 <span class="badge badge-danger badge-pill px-3 py-1">admin</span>
             @elseif ($user->is_finance == 1)
                 <span class="badge badge-success badge-pill px-3 py-1">finance</span>
+            @elseif ($user->is_tech == 1)
+                <span class="badge badge-dark badge-pill px-3 py-1">tech</span>
             @else
                 <span class="badge badge-primary badge-pill px-3 py-1">user</span>
             @endif

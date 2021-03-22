@@ -11,10 +11,10 @@
                 <thead>
                     <tr>
                         <th class="text-center">Id</th>
-                        <th class="text-center">Client Names</th>
-                        <th class="text-center">Assigned To</th>
                         <th class="text-center">Title</th>
                         <th class="text-center">Description</th>
+                        <th class="text-center">Client Names</th>
+                        <th class="text-center">Assigned To</th>
                         <th class="text-center">Percentage</th>
                         <th class="text-center">Action</th>
                     </tr>
@@ -23,12 +23,13 @@
                     @foreach ($projects as $project)
                         <tr>
                             <td class="text-center"><a href="/projects/{{ $project->id }}">{{ $project->id }}</a></td>
+                            <td><a href="/projects/{{ $project->id }}">{{ $project->title }}</a></td>
+                            <td><a href="/projects/{{ $project->id }}">{{ substr($project->description, 0, 20) }}</a>
+                            </td>
                             <td>{{ $project->client->firstname }}
                                 {{ $project->client->lastname }}</td>
                             <td>{{ $project->assigned_To->firstname }}
                                 {{ $project->assigned_To->lastname }}</td>
-                            <td>{{ $project->title }}</td>
-                            <td>{{ $project->description }}</td>
                             <td>
                                 <div class="progress">
                                     <div class="progress-bar bg-success" role="progressbar"

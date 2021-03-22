@@ -11,6 +11,7 @@
                     <option value="user">User</option>
                     <option value="admin">Administrator</option>
                     <option value="finance">Finance</option>
+                    <option value="tech">Technical</option>
                 </select>
             </div>
             <br>

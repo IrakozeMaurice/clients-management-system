@@ -12,6 +12,7 @@
                     <option value="admin" @if ($user->is_admin == 1) selected @endif>Administrator</option>
                     <option value="user" @if ($user->is_admin == 0) selected @endif>User</option>
                     <option value="finance" @if ($user->is_finance == 1) selected @endif>Finance</option>
+                    <option value="tech" @if ($user->is_tech == 1) selected @endif>Technical</option>
                 </select>
             </div>
             <br>

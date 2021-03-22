@@ -69,16 +69,16 @@ Route::resource('expenses', 'ExpensesController')->middleware(['auth', 'is_finan
 
 Route::resource('projects', 'ProjectsController')->names([
     'show' => 'projects.show'
-]);
+])->middleware(['auth', 'is_tech']);
 
-Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
+Route::post('/projects/{project}/tasks', 'ProjectTasksController@store')->middleware(['auth', 'is_tech']);
 
-Route::patch('/tasks/{task}', 'ProjectTasksController@update');
+Route::patch('/tasks/{task}', 'ProjectTasksController@update')->middleware(['auth', 'is_tech']);
 
-Route::get('/tasks/{task}', 'ProjectTasksController@show');
+Route::get('/tasks/{task}', 'ProjectTasksController@show')->middleware(['auth', 'is_tech']);
 
-Route::get('/tasks/{task}/edit', 'ProjectTasksController@edit');
+Route::get('/tasks/{task}/edit', 'ProjectTasksController@edit')->middleware(['auth', 'is_tech']);
 
-Route::patch('/edittask/{task}', 'ProjectTasksController@updateTask');
+Route::patch('/edittask/{task}', 'ProjectTasksController@updateTask')->middleware(['auth', 'is_tech']);
 
-Route::delete('/tasks/{task}', 'ProjectTasksController@destroy');
+Route::delete('/tasks/{task}', 'ProjectTasksController@destroy')->middleware(['auth', 'is_tech']);

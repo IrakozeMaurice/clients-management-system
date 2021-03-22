@@ -25,16 +25,20 @@ class UsersController extends Controller
         $attributes = $this->validateUser();
         $attributes['password'] = Hash::make('');
         $attributes['is_finance'] = ($attributes['role'] == 'finance') ? true : false;
+        $attributes['is_tech'] = ($attributes['role'] == 'tech') ? true : false;
         $attributes['is_admin'] = ($attributes['role'] == 'admin') ? true : false;
         $attributes['approved'] = false;
+        $attributes['active'] = false;
         $user = new User();
         $user->firstname = $attributes['firstname'];
         $user->lastname = $attributes['lastname'];
         $user->email = $attributes['email'];
         $user->password = $attributes['password'];
         $user->is_finance = $attributes['is_finance'];
+        $user->is_tech = $attributes['is_tech'];
         $user->is_admin = $attributes['is_admin'];
         $user->approved = $attributes['approved'];
+        $user->active = $attributes['active'];
 
         $user->save();
         Profile::create([
@@ -64,9 +68,10 @@ class UsersController extends Controller
         $user->lastname = $attributes['lastname'];
         $user->email = $attributes['email'];
         $user->is_finance = request('role') === 'finance' ? true : false;
+        $user->is_tech = request('role') === 'tech' ? true : false;
         $user->is_admin = request('role') === 'admin' ? true : false;
         $user->save();
-        return redirect('/users')->with('message', 'profile updated');
+        return redirect('/users')->with('message', 'user updated');
     }
 
     public function destroy(User $user)
@@ -100,7 +105,11 @@ class UsersController extends Controller
     public function approve($id)
     {
         $user = User::where('id', $id)->get()->first();
+        if ($user->approved == 1) {
+            return redirect('/users')->with('message', 'user is already approved');
+        }
         $user->approved = 1;
+        $user->active = 1;
         $user->save();
         return redirect('/users')->with('message', 'user approved');
     }

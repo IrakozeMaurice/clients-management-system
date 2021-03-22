@@ -5,7 +5,9 @@
 <div class="row">
     @include('partials.menu')
     <div class="col-lg-12 container">
-        @include('partials.errors')
+        <div class="container">
+            @include('partials.errors')
+        </div>
         {{-- content section --}}
         <div class="row container-fluid">
             @yield('content')

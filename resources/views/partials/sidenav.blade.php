@@ -90,11 +90,14 @@
             </li>
         @endif
         <!-- Nav Item - projects -->
-        <li class="nav-item">
-            <a class="nav-link" href="/projects">
-                <i class="fas fa-fw fa-rocket"></i>
-                <span>Projects</span></a>
-        </li>
+        @if (auth()->user()->is_tech || auth()->user()->is_admin)
+
+            <li class="nav-item">
+                <a class="nav-link" href="/projects">
+                    <i class="fas fa-fw fa-rocket"></i>
+                    <span>Projects</span></a>
+            </li>
+        @endif
         <!-- Divider -->
         <hr class="sidebar-divider">
         <!-- Heading -->
