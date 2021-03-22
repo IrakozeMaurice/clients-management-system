@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateHostingTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('hosting', function (Blueprint $table) {
@@ -27,11 +22,6 @@ class CreateHostingTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('hosting');

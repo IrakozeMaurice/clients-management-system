@@ -7,11 +7,7 @@ use phpDocumentor\Reflection\Types\Nullable;
 
 class ChangeOrdersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
@@ -22,11 +18,6 @@ class ChangeOrdersTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::table('orders', function (Blueprint $table) {
